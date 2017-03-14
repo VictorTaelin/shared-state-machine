@@ -1,0 +1,22 @@
+{
+  "name": "shared-state-machine",
+  "version": "0.1.2",
+  "description": "",
+  "main": "src/shared-state-machine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maiavictor/shared-state-machine.git"
+  },
+  "author": "MaiaVictor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maiavictor/shared-state-machine/issues"
+  },
+  "homepage": "https://github.com/maiavictor/shared-state-machine#readme",
+  "dependencies": {
+    "servify": "^0.1.11"
+  }
+}
