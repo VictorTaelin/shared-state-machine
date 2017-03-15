@@ -1,6 +1,6 @@
 {
   "name": "shared-state-machine",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "",
   "main": "src/shared-state-machine.js",
   "scripts": {

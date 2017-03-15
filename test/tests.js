@@ -20,7 +20,7 @@ setTimeout(() => {
     ssm.get(state => console.log("state: " + state));
 
     // Every second, add a random number to the state
-    setInterval(() => ssm.act(Math.random() - 0.5), 1000);
+    setInterval(() => ssm.act(Math.random() - 0.5), 30);
 
   });
 

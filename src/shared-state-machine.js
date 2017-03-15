@@ -37,7 +37,7 @@ const init = app => port => dataDir => {
 
     // Gives the user all transactions since given index
     poll: since =>
-      log.slice(since)
+      log.slice(since).map((tx, i) => ([since+i, tx]))
 
   });
 }
@@ -51,12 +51,15 @@ const play = app => url => {
 
     // Refreshes state pooling last logs
     setInterval(() => api.poll(index).then(txs => {
-      index += txs.length;
-      for (var i = 0, l = txs.length; i < l; ++i)
-        state = app.next(txs[i])(state);
+      for (let i = 0, l = txs.length; i < l; ++i) {
+        if (txs[i][0] === index) {
+          state = app.next(txs[i][1])(state);
+          ++index;
+        };
+      };
       if (txs.length > 0)
         get(state);
-    }), 200);
+    }), 400);
 
     return {
       get: callback => (get = callback, get(state)),
