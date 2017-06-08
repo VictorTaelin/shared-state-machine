@@ -39,7 +39,7 @@ const init = app => port => dataDir => {
     poll: since =>
       log.slice(since).map((tx, i) => ([since+i, tx]))
 
-  });
+  }).then(() => play(app)("http://localhost:"+port));
 }
 
 const play = app => url => {
